@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector</title>
+    <link rel="stylesheet" href="selector.css">
+</head>
+<body>
+    <div class="section-box">
+        <h2>Descendant Selector </h2>
+        <div class="items">
+            <a href="#">Item1</a>
+            <a href="#">Item2</a>
+            <a href="#">Item3</a>
+            <ul>
+                <li><a href="#">Item4</a></li>
+                <li><a href="#">Item5</a></li>
+                <li><a href="#">Item6</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="section-box">
+        <h2> Direct Child Selector</h2>
+        <div class="parent-div">
+            <span>Span #1, in the div.</span>
+            <p>
+                <span>Span #2, in the span that's...</span>
+            </p>
+        </div>
+        <span>Span #3, not in the div at all.</span>
+    </div>
+
+
+    <div class="section-box">
+        <h2> Adjacent Sibling Selector</h2>
+        <div class="sibling-demo">
+            <div>
+                <p>I'm a paragraph</p>
+                <p>I am selected!</p>
+            </div>
+            <div>
+                <p>I'm a paragraph</p>
+                <h2>Monkey hair</h2>
+                <p>I am NOT selected</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-box">
+        <h2>Multiple Classes</h2>
+        <h2 class="apple orange small">Apple + Orange</h2>
+        <h2 class="apple">Apple</h2>
+        <h2 class="orange">Orange</h2>
+    </div>
+</body>
+</html>

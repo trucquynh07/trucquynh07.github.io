@@ -1,0 +1,37 @@
+body {
+    background: #ddd;
+    font-family: cursive;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+span {
+    display: block;
+    background: #f0f04a;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 30px;
+}
+.second {
+    color: red;
+    font-weight: bold;
+}
+
+.third {
+    background: black;
+    color: white;
+    font-style: italic;
+}
+
+.fifth, .sixth {
+    color: red;
+    font-weight: bold;
+}
