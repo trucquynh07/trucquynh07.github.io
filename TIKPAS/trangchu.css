@@ -1,0 +1,46 @@
+body {
+    background-color: #0a044c;
+    color: #e2dfff;
+    font-family: 'Epilogue', sans-serif;
+    margin: 0;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-gradient {
+    background: radial-gradient(circle at top right, rgba(255, 105, 180, 0.15), transparent 50%),
+                radial-gradient(circle at bottom left, rgba(168, 232, 249, 0.1), transparent 50%);
+}
+
+/* Tối ưu Navigation */
+.nav-link {
+    color: #211F60;
+    font-weight: 500;
+    font-size: 14px;
+    white-space: nowrap; /* Quan trọng: Không cho chữ xuống dòng */
+    padding: 0 10px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #FF69B4;
+}
+
+.nav-link.active {
+    font-weight: 700;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: #FF69B4;
+}

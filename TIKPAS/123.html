@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "inverse-primary": "#ac2471",
+                "surface-bright": "#323172",
+                "inverse-surface": "#e2dfff",
+                "on-primary-fixed-variant": "#8c0058",
+                "tertiary-fixed-dim": "#c3c0ff",
+                "on-surface": "#e2dfff",
+                "on-tertiary-fixed-variant": "#3e3c8f",
+                "primary-fixed": "#ffd8e6",
+                "surface-container-low": "#131053",
+                "secondary-fixed": "#adedfe",
+                "on-tertiary-container": "#2d2a7d",
+                "error-container": "#93000a",
+                "on-secondary-container": "#86c5d6",
+                "error": "#ffb4ab",
+                "on-primary-container": "#6e0044",
+                "surface-dim": "#0a044c",
+                "on-error": "#690005",
+                "primary-fixed-dim": "#ffb0d0",
+                "on-error-container": "#ffdad6",
+                "on-surface-variant": "#dcbfc9",
+                "surface-container-highest": "#2e2c6d",
+                "outline": "#a48a93",
+                "on-tertiary-fixed": "#100563",
+                "on-background": "#e2dfff",
+                "tertiary-fixed": "#e2dfff",
+                "surface-tint": "#ffb0d0",
+                "on-secondary-fixed": "#001f26",
+                "secondary-container": "#005361",
+                "on-primary-fixed": "#3d0024",
+                "surface-container-high": "#232162",
+                "secondary-fixed-dim": "#91d0e1",
+                "background": "#0a044c",
+                "surface-container": "#181557",
+                "on-secondary": "#003640",
+                "primary-container": "#ff69b4",
+                "primary": "#ffb0d0",
+                "on-secondary-fixed-variant": "#004e5c",
+                "tertiary": "#c3c0ff",
+                "surface-variant": "#2e2c6d",
+                "surface-container-lowest": "#050043",
+                "secondary": "#91d0e1",
+                "tertiary-container": "#9896ef",
+                "surface": "#0a044c",
+                "on-tertiary": "#272377",
+                "outline-variant": "#564149",
+                "on-primary": "#63003d",
+                "inverse-on-surface": "#292868"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "lg": "40px",
+                "container-max": "1200px",
+                "base": "8px",
+                "xl": "64px",
+                "gutter": "20px",
+                "sm": "12px",
+                "xs": "4px",
+                "md": "24px"
+            },
+            "fontFamily": {
+                "body-lg": ["Epilogue"],
+                "headline-md": ["Epilogue"],
+                "body-md": ["Epilogue"],
+                "label-sm": ["Epilogue"],
+                "headline-lg": ["Epilogue"],
+                "label-md": ["Epilogue"],
+                "display-lg": ["Epilogue"]
+            },
+            "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0a044c;
+            color: #e2dfff;
+            font-family: 'Epilogue', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(255, 105, 180, 0.15), transparent 50%),
+                        radial-gradient(circle at bottom left, rgba(168, 232, 249, 0.1), transparent 50%);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-[#A8E8F9] border-b border-black/10 shadow-lg antialiased">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between px-8 h-20">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black text-[#FF69B4] tracking-tighter" href="#">TIKPAS</a>
+<div class="relative group hidden lg:block">
+<div class="flex items-center gap-2 bg-[#211F60]/5 px-4 py-2 rounded-full border border-[#211F60]/10">
+<span class="material-symbols-outlined text-[20px]" style="color: #211F60;">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md w-48 placeholder:text-[#211F60]/60" placeholder="Tìm sự kiện, nghệ sĩ..." style="color: #211F60;" type="text"/>
+</div>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-bold border-b-2 border-[#FF69B4] pb-1 hover:text-[#FF69B4] transition-all active:scale-95 duration-200" href="#" style="color: #211F60;">Thông tin sự kiện</a>
+<a class="font-medium hover:text-[#FF69B4] transition-all active:scale-95 duration-200" href="#" style="color: #211F60;">Đấu giá</a>
+<a class="font-medium hover:text-[#FF69B4] transition-all active:scale-95 duration-200" href="#" style="color: #211F60;">Bảng tin TIKPAS</a>
+<a class="font-medium hover:text-[#FF69B4] transition-all active:scale-95 duration-200" href="#" style="color: #211F60;">Bán vé</a>
+<a class="font-medium hover:text-[#FF69B4] transition-all active:scale-95 duration-200" href="#" style="color: #211F60;">Đơn hàng của tôi</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-medium px-4 py-2 hover:opacity-70 transition-colors" style="color: #211F60;">Đăng nhập</button>
+<button class="bg-primary-container px-6 py-2 rounded-full font-bold glow-hover active:scale-95 duration-200 transition-all" style="background-color: #FF69B4; color: white;">Đăng ký</button>
+</div>
+</div>
+</header>
+<main class="hero-gradient">
+<!-- Hero Section -->
+<section class="max-w-[1200px] mx-auto px-8 pt-12 pb-xl">
+<div class="grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 lg:col-span-5 space-y-md">
+<span class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-label-sm border border-primary/20">THỊ TRƯỜNG CHUYỂN NHƯỢNG VÉ TRỰC TIẾP</span>
+<h1 class="font-display-lg text-display-lg tracking-tight">Trải nghiệm Nhịp đập <span class="text-primary italic">Sôi động</span> của các Sự kiện Trực tiếp.</h1>
+<p class="text-body-lg text-on-surface-variant max-w-md">Thị trường an toàn nhất để mua và bán vé đã được xác thực cho các buổi hòa nhạc, thể thao và lễ hội.</p>
+<div class="flex gap-4 pt-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold text-headline-md flex items-center gap-2 glow-hover transition-all">
+                        Khám phá Sự kiện <span class="material-symbols-outlined">trending_flat</span>
+</button>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-7 relative h-[500px]">
+<div class="absolute inset-0 rounded-3xl overflow-hidden glass-card">
+<img alt="sân khấu ca nhạc neon rực rỡ với ánh đèn laser, bóng người cổ vũ trong sân vận động tối, không khí tràn đầy năng lượng" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9xt6CeeNGEQmsjE-uC0YZI8CsoNzDx1E50JvU1IyeBin5MhdRWMYrL8zseUDWTyfU8r9hALPFksmOCNsR4OcotCS0eRD8k2_kUS-vTBHqFFn1Y50CWPaz_JGC-afkGGDHWrRPtNln92d0IIC2NBD9JZhld1iES2Z0GtN_LnOCtRm4JGlQm_wjjFWGBtQIX6NGnkq0skaBWSgYMB_NbGXJDZPOzceHAWw9Xa9TxqGMTTJGUN5sGs15PgS0gKUwDFlq2Wlv3SiEieo"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-background via-background/40 to-transparent">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-headline-lg font-headline-lg mb-1">Lễ hội Electronic Peak</h3>
+<p class="text-on-surface-variant">Madison Square Garden • 24 Th8, 2024</p>
+</div>
+<div class="bg-secondary/20 backdrop-blur-md border border-secondary/30 p-4 rounded-xl">
+<span class="block text-label-sm text-secondary uppercase">Giá từ</span>
+<span class="text-headline-md font-bold text-white">$129.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Categories Bento -->
+<section class="max-w-[1200px] mx-auto px-8 py-xl">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="text-headline-lg font-headline-lg">Danh mục <span class="text-secondary">Thịnh hành</span></h2>
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">Xem tất cả danh mục <span class="material-symbols-outlined">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-4 grid-rows-2 gap-4 h-[400px]">
+<div class="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl glass-card">
+<img alt="cận cảnh một buổi hòa nhạc rock sôi động với khói sân khấu và ánh sáng kịch tính" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QdwuLuyJHs8OMh1Ee2V-Edfi0DvouZimSIbeiqvw5mDHTvpddXWLkPbsdmCOak8t9UGtiG9AJd_oQXeDR_aVRMaguweXeH_4l5UI011jzl4ZIM_Njjo_sD_i34P32BKV4bztLNbH4aMIk5GvlypPL4vwo69lInoWPBLaMvojkfPKJgoxmNsXE2hMNbRB1vDUASJev4t55KzxqIfo-XpVjYXsbXlKP5kL98YDK52vKMoilY3celgEpxMGb5GQ2_abkzCoWN28tmo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="text-headline-md font-bold">Hòa nhạc</h4>
+<p class="text-label-md text-white/80">420+ Sự kiện</p>
+</div>
+</div>
+<div class="col-span-2 row-span-1 relative group overflow-hidden rounded-2xl glass-card">
+<img alt="sân vận động thể thao chuyên nghiệp vào ban đêm dưới ánh đèn pha rực rỡ với các chỗ ngồi chật kín" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsd3rVw8oqNb7cOvi1BNvWwSvIEYWQ6cq8-pEj19eCKo2Ts16BVikf-t_1Iu8-rAkFE3EYh-vFf_Ohy8b4GbhD_ME2fd6XEUMndCziivO0HfhAWCUe5Y8yCoHL_q8BOM7lz2-hyd5NqdgO12aofkN-Kz90w-w98JuAElkHimoub9BgMad_U_LfNJkEUpfxDaWMaTPY-IsRKenZdpjzV7dUcrzom4XHqDg3Erhis0DorKKZxtk859pmvVhAgKxFh-j7AABNNVV5Fb0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary/60 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="text-headline-md font-bold">Thể thao</h4>
+<p class="text-label-md text-white/80">150+ Sự kiện</p>
+</div>
+</div>
+<div class="col-span-1 row-span-1 relative group overflow-hidden rounded-2xl glass-card">
+<img alt="sân khấu kịch kịch tính với rèm nhung đỏ và ánh sáng sân khấu" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAswsm6aK8Ka574zghoAZZohLjnoQ3D6Gbve4BlWKmBa20XuOG_kWRRhhoH1eQFwCKwHW0Syqn9NikER0WGBBhUYmF-3bzEm6L_V0_MD0vxeWdTHZghiKaE0I51jbHxE9FZQHsPmKV3djsJ2NHSgQ44rQw2oU11jmYUEI0Lws_QWUTVlLw8_xJS85ZVyhz8d-Vw5OIqLCfVmlMISe-mwAJu81d9Amp7uOx6zOTM_NBb0Kge69k5g3S-tCY_ruWPD_cC3u3vBzyzKl0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/60 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-4 left-4">
+<h4 class="text-label-md font-bold">Kịch nghệ</h4>
+</div>
+</div>
+<div class="col-span-1 row-span-1 relative group overflow-hidden rounded-2xl glass-card">
+<img alt="đám đông tại một địa điểm giải trí về đêm sôi động với ánh sáng neon đầy màu sắc và quả cầu disco" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjq3zKHV1twVGzT74maM885_ROn3GSycxFax3muq3A9TV0LpA7ADMqxfdpxYU8bGVKniku_ZBAQ17S2SMuH3hpUI-EhUuwJ2bjgp1wGSPvH2ebHxHu-5GJ55TMWH-tOH0PAuylA1xEGLJSY5N2LaXFU5znZrKyWKzo4I61TCNK98UCEr4-R5d05w7gKygCvafjTWu2GBQ3zKjxbkDgIif5PCmSZy2wDa920pti6xdA1VlprdwupxIp0aO0kv8seE-r7gOCWkxULnA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-4 left-4">
+<h4 class="text-label-md font-bold">Giải trí đêm</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Events Grid -->
+<section class="max-w-[1200px] mx-auto px-8 py-xl">
+<div class="flex items-center justify-between mb-lg">
+<div>
+<h2 class="text-headline-lg font-headline-lg">Sự kiện <span class="text-primary">Sắp tới</span></h2>
+<p class="text-on-surface-variant">Đừng bỏ lỡ những tấm vé hot nhất mùa giải.</p>
+</div>
+<div class="flex bg-surface-container-high p-1 rounded-lg">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-md text-label-md font-bold">Tất cả</button>
+<button class="px-4 py-2 text-label-md text-on-surface-variant hover:text-white">Cuối tuần này</button>
+<button class="px-4 py-2 text-label-md text-on-surface-variant hover:text-white">Âm nhạc</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Event Card 1 -->
+<div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+<div class="h-48 overflow-hidden relative">
+<img alt="dj biểu diễn tại một câu lạc bộ tối với ánh sáng neon tím và xanh" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp8mITayYeiEPegOI0us_QDhBMjY2kSy8RHeIgnIOhiKAxJwkoZuSsib9Pj5sj-X6rI3K-7uyCa2foTyg1Bg5ZXkZtVaC4S9cQH2Rzl-OHTTjBxdwgBE2hDQKhOfj0uHbyKE7LdrHd5FcjT_IgCjLhUpcRrpu9N0hmOqRBRnBKydjJd9n1Y7hZqE0vpXRpUR5LgCFraM5yw90wRvwVnXgfkbCgXEq7hRLAXOvetn_YkPwgglfULhA40zAo7bUhfDfFyoMX94fdW9o"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-bold border border-white/10">ÂM NHẠC</div>
+<button class="absolute top-4 right-4 text-white/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-5 bg-surface-container-low/50">
+<div class="flex items-center gap-2 text-secondary text-label-sm mb-2">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                        28 TH8, 2024
+                    </div>
+<h4 class="text-body-lg font-bold mb-1 truncate">Phiên Techno Underground</h4>
+<p class="text-label-md text-on-surface-variant mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                        Brooklyn Mirage, NY
+                    </p>
+<div class="flex items-center justify-between border-t border-white/5 pt-4">
+<span class="text-headline-md font-black text-white">$85</span>
+<button class="bg-white/10 hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg text-label-md font-bold transition-all">Mua vé</button>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+<div class="h-48 overflow-hidden relative">
+<img alt="trận bóng rổ ban đêm trong nhà thi đấu hiện đại với ánh đèn sân tươi sáng" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMIIj0tiw_Vl2ZXZOp4S-qzMwzj9pQTTwe2VEAGCYa5eRET7LKh804y6pg-8HWTrTigyftBL5btK9LRUw8D_WVowirev2YKtyMu6anz2YUemMMikBilh9-h40K8ewni_woKkvzfNtD5s6Wah8zL7pMAJFxVtr3WXoxjlnOsjdKdHVy-qdn7RDBs9ojPGr_5EPIggm7THtPizGoJssmPeDJBVi70ggtbq9GtyCwJ0faRt8JRBzH5__rRY_Iwm4QPQgbVcXRa3w88oI"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-bold border border-white/10">THỂ THAO</div>
+<button class="absolute top-4 right-4 text-white/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-5 bg-surface-container-low/50">
+<div class="flex items-center gap-2 text-secondary text-label-sm mb-2">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                        05 TH9, 2024
+                    </div>
+<h4 class="text-body-lg font-bold mb-1 truncate">Knicks vs. Celtics Tiền mùa giải</h4>
+<p class="text-label-md text-on-surface-variant mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                        MSG, New York
+                    </p>
+<div class="flex items-center justify-between border-t border-white/5 pt-4">
+<span class="text-headline-md font-black text-white">$145</span>
+<button class="bg-white/10 hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg text-label-md font-bold transition-all">Mua vé</button>
+</div>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+<div class="h-48 overflow-hidden relative">
+<img alt="lễ hội ngoài trời rực rỡ với các tác phẩm nghệ thuật đầy màu sắc và đám đông dưới bầu trời hoàng hôn" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBed2PkUZOCeNYL0Fb8CNtZaf-1fT9hN3fCdYsqC6xzLzFeqi-m0_5df4IGXAq3D3Ej4-VgdpDIXDGWg1eygdw79zRd0P1uiiXi8SRWgcBeAHgfWGIPOuC3lolVcvfoPkGFVtMVZQMVAgappr7tXvam9legDX0bak5jC_rJE53a8IyIJF5pQCPL8njSurd6U0J3_Vt5hph_Rlel5Ilsm1MRC8XfKE6DdDNGsPVbEswOslcjrCZGVfIifRqSxM0v5oJbetxFbPGtE_0"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-bold border border-white/10">LỄ HỘI</div>
+<button class="absolute top-4 right-4 text-white/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-5 bg-surface-container-low/50">
+<div class="flex items-center gap-2 text-secondary text-label-sm mb-2">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                        12 TH10, 2024
+                    </div>
+<h4 class="text-body-lg font-bold mb-1 truncate">Chuỗi Coachella Mùa Đông</h4>
+<p class="text-label-md text-on-surface-variant mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                        Indio, California
+                    </p>
+<div class="flex items-center justify-between border-t border-white/5 pt-4">
+<span class="text-headline-md font-black text-white">$450</span>
+<button class="bg-white/10 hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg text-label-md font-bold transition-all">Mua vé</button>
+</div>
+</div>
+</div>
+<!-- Event Card 4 -->
+<div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+<div class="h-48 overflow-hidden relative">
+<img alt="nghệ sĩ saxophone jazz biểu diễn trong câu lạc bộ jazz ấm cúng với ánh đèn xanh mờ" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdR5uRFmm8HtQmPIXBs78YcJUH8A42Nj8ybDZWtJ2Bk-b1FC5o0kBv-q8P03CZL-G-iOtlTDZNXa_mONNriKIyuU513CqCoLNpyq2YGURZyBEcOqyab9ZuJ-BQbJki3QeEc-zQt9ZHSNMc7lecbZH9shWbcsYIAUnPzsnCikGLHjWQQxqYdoJ71tZGh9852z_oU4l-uzaxex3Ys6aykoa0v8JVcr5lVi47teGtCWiM88Wkcey1t_XIlMwWoSquxH0Fk473VyZCpuA"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-label-sm font-bold border border-white/10">JAZZ</div>
+<button class="absolute top-4 right-4 text-white/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-5 bg-surface-container-low/50">
+<div class="flex items-center gap-2 text-secondary text-label-sm mb-2">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                        19 TH9, 2024
+                    </div>
+<h4 class="text-body-lg font-bold mb-1 truncate">Blue Note Đêm muộn</h4>
+<p class="text-label-md text-on-surface-variant mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                        Blue Note, NY
+                    </p>
+<div class="flex items-center justify-between border-t border-white/5 pt-4">
+<span class="text-headline-md font-black text-white">$55</span>
+<button class="bg-white/10 hover:bg-primary/20 hover:text-primary px-4 py-2 rounded-lg text-label-md font-bold transition-all">Mua vé</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-lg text-center">
+<button class="outline outline-1 outline-secondary text-secondary px-8 py-3 rounded-full font-bold hover:bg-secondary hover:text-on-secondary transition-all">Xem thêm sự kiện</button>
+</div>
+</section>
+<!-- Trust Features -->
+<section class="max-w-[1200px] mx-auto px-8 py-xl">
+<div class="glass-card rounded-3xl p-lg grid grid-cols-1 md:grid-cols-3 gap-lg text-center">
+<div class="space-y-base">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary text-[32px]">verified_user</span>
+</div>
+<h3 class="text-headline-md font-bold">Đảm bảo 100%</h3>
+<p class="text-label-md text-on-surface-variant">Vé của bạn là hợp lệ và sẽ được gửi đúng hạn cho sự kiện.</p>
+</div>
+<div class="space-y-base">
+<div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-secondary text-[32px]">speed</span>
+</div>
+<h3 class="text-headline-md font-bold">Giao vé tức thì</h3>
+<p class="text-label-md text-on-surface-variant">Nhận vé điện tử của bạn ngay lập tức trong ví TikPas.</p>
+</div>
+<div class="space-y-base">
+<div class="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-tertiary text-[32px]">support_agent</span>
+</div>
+<h3 class="text-headline-md font-bold">Hỗ trợ chuyên gia</h3>
+<p class="text-label-md text-on-surface-variant">Đội ngũ hỗ trợ người hâm mộ 24/7 tận tâm cho mọi nhu cầu về vé.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#211F60] dark:bg-[#0B0A24] w-full py-12 mt-16 border-t border-white/5 text-sm">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8">
+<div class="space-y-4">
+<div class="text-xl font-black text-[#FF69B4]">TIKPAS</div>
+<p class="text-white/60 leading-relaxed">Thị trường toàn cầu cho người hâm mộ sự kiện trực tiếp. An toàn, nhanh chóng và sôi động.</p>
+<div class="flex gap-4">
+<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-white/40 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h5 class="text-white font-bold uppercase tracking-wider">Thị trường</h5>
+<ul class="space-y-2">
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Âm nhạc</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Thể thao</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Kịch nghệ</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Hòa nhạc</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-white font-bold uppercase tracking-wider">Tài nguyên</h5>
+<ul class="space-y-2">
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Điều khoản dịch vụ</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Trung tâm trợ giúp</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Đảm bảo người mua</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-white font-bold uppercase tracking-wider">Kết nối</h5>
+<p class="text-white/60">Đăng ký để nhận thông tin sớm về các đợt vé hot.</p>
+<div class="flex">
+<input class="bg-white/5 border border-white/10 rounded-l-lg px-4 py-2 w-full focus:outline-none focus:border-primary text-white" placeholder="Địa chỉ email" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-lg font-bold">Tham gia</button>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-8 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-white/40 text-xs">© 2024 Thị trường chuyển nhượng TIKPAS. Bảo lưu mọi quyền.</div>
+<div class="flex gap-6">
+<a class="text-white/40 hover:text-[#FF69B4] text-xs transition-colors" href="#">Liên hệ</a>
+<a class="text-white/40 hover:text-[#FF69B4] text-xs transition-colors" href="#">Khả năng tiếp cận</a>
+</div>
+</div>
+</footer>
+</body></html>
