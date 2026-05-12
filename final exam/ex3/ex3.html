@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Grade Calculator</title>
+    <link rel="stylesheet" href="ex3.css">
+</head>
+<body>
+
+    <h2>Student Grade Report &reg;</h2>
+    <p>Quy chế đào tạo &sect;: Điểm đạt &ge; 5.0</p>
+
+    <table id="gradeTable">
+        <thead>
+            <tr>
+                <th>Môn học</th>
+                <th>Điểm số</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Kinh tế học cơ bản</td>
+                <td><input type="number" class="grade" value="8.5"></td>
+            </tr>
+            <tr>
+                <td>Toán cho Fintech</td>
+                <td><input type="number" class="grade" value="7.0"></td>
+            </tr>
+            <tr>
+                <td>Lập trình Web cơ bản</td>
+                <td><input type="number" class="grade" value="9.0"></td>
+            </tr>
+            <tr>
+                <td>Xác suất thống kê</td>
+                <td><input type="number" class="grade" value="6.5"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" onclick="calculateAverage()">Calculate Average</button>
+    
+    <p id="result"></p>
+
+    <script src="ex3.js"></script>
+</body>
+</html>

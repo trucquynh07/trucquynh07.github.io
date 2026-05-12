@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Yêu cầu 4: Style table với borders và padding */
+table {
+    width: 400px;
+    border-collapse: collapse; /* Gộp đường viền cho gọn */
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid black; /* Vẽ đường viền */
+    padding: 10px;          /* Tạo khoảng trống trong ô */
+    text-align: left;
+}
+
+th {
+    background-color: #eee;
+}

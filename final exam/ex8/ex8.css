@@ -1,0 +1,56 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+}
+
+/* Yêu cầu 3: Style form with CSS Grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mặc định 1 cột */
+    gap: 20px;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* Khi màn hình rộng hơn, chia làm 2 cột */
+@media (min-width: 450px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    button {
+        grid-column: span 2; /* Nút bấm trải dài 2 cột */
+    }
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #d35400;
+}

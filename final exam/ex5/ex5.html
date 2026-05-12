@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabbed Content Interface</title>
+    <link rel="stylesheet" href="ex5.css">
+</head>
+<body>
+
+    <h2>Tính năng sản phẩm &rarr;</h2> <div class="tab-container">
+        <button class="tab-btn active" onclick="switchTab(event, 'features')">Features</button>
+        <button class="tab-btn" onclick="switchTab(event, 'pricing')">Pricing &euro;</button> <button class="tab-btn" onclick="switchTab(event, 'reviews')">Reviews</button>
+        <button class="tab-btn" onclick="switchTab(event, 'support')">Support</button>
+    </div>
+
+    <div id="features" class="tab-content active">
+        <h3>Features Content</h3>
+        <p>Chi tiết về các tính năng nổi bật của sản phẩm.</p>
+    </div>
+
+    <div id="pricing" class="tab-content">
+        <h3>Pricing Content</h3>
+        <p>Bảng giá chi tiết các gói dịch vụ &euro;.</p>
+    </div>
+
+    <div id="reviews" class="tab-content">
+        <h3>Reviews Content</h3>
+        <p>Đánh giá từ khách hàng đã sử dụng.</p>
+    </div>
+
+    <div id="support" class="tab-content">
+        <h3>Support Content</h3>
+        <p>Liên hệ bộ phận hỗ trợ kỹ thuật 24/7.</p>
+    </div>
+
+    <script src="ex5.js"></script>
+</body>
+</html>

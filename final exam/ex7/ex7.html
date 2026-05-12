@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Contact Form</title>
+    <link rel="stylesheet" href="ex7.css">
+</head>
+<body>
+
+    <h2>Liên hệ với chúng tôi</h2>
+
+    <form id="contactForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Nhập tên của bạn">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Nhập email của bạn">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" placeholder="Nhập tin nhắn"></textarea>
+        </div>
+
+        <button type="button" onclick="validateContactForm()">Submit</button>
+    </form>
+
+    <p id="successMessage" style="color: green; font-weight: bold;"></p>
+
+    <script src="ex7.js"></script>
+</body>
+</html>

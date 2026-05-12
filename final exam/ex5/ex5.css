@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.tab-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+/* Yêu cầu 3: Style tabs với trạng thái active/inactive */
+.tab-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab-btn.active {
+    background-color: #fff;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none; /* Mặc định ẩn tất cả nội dung */
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+.tab-content.active {
+    display: block; /* Chỉ hiện nội dung có class active */
+}
